@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../../../untitled1.tsx"/>
+ <layer name="Tile Layer 1" width="100" height="100" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt0rEJACAMRcEPDuBI2X8rC3EDxRT34LoUgaSSFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO3N8X8H9h2OF/O3duv+L5IkSZIkSVLnFqbFdCo=
+  </data>
+ </layer>
+ <layer name="dirt" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0TEOACAIA0AG3uzm332BG0SNd0l3WiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACASiNPXwDwjpl9uU1n1x9TsenuRwuTWz94
+  </data>
+ </layer>
+</map>
