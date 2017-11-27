@@ -1,0 +1,32 @@
+//load map
+		tilemap=new TmxMapLoader().load("C:\\Users\\Shubham Mittal\\Desktop\\FighterX\\core\\assets\\untitled.tmx");
+		tmr=new OrthogonalTiledMapRenderer(tilemap);
+        TiledMapTileLayer layer=(TiledMapTileLayer) tilemap.getLayers().get("dirt");
+        tileSize=layer.getTileHeight();
+        //go through all the cells in the layer
+        for(int row=0;row<layer.getHeight();row++)
+        {
+            for(int col=0;col<layer.getWidth();col++)
+            {
+                TiledMapTileLayer.Cell cell=layer.getCell(col,row);
+                if(cell==null) continue;
+                if(cell.getTile()==null) continue;
+                bdef.type= BodyDef.BodyType.StaticBody;
+                bdef.position.set((col)*tileSize+tileSize/2,(row)*tileSize+tileSize/2);
+
+                PolygonShape cs=new PolygonShape();
+                Vector2[] v=new Vector2[3];
+                v[0]=new Vector2(-tileSize/2,-tileSize/2);
+                v[1]=new Vector2(-tileSize/2,tileSize/2);
+                v[2]=new Vector2(tileSize/2,tileSize/2);
+                cs.set(v);
+                cs.setAsBox(tileSize/2,tileSize/2);
+                //fdef.friction=0;
+                fdef.shape=cs;
+                fdef.filter.categoryBits=BIT_Ground;
+                fdef.filter.maskBits=BIT_Box;
+                fdef.isSensor=false;
+                world.createBody(bdef).createFixture(fdef);
+
+            }
+        }
